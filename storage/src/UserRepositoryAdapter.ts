@@ -1,6 +1,6 @@
-import {User} from "hexagonal.domain";
+import {User, UserRepository} from "hexagonal.domain";
 
-export class UserRepositoryAdapter {
+export class UserRepositoryAdapter implements UserRepository{
 
     private users = new Array<User>()
     store(user: User) {
