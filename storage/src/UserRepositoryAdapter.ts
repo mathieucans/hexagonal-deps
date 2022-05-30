@@ -1,7 +1,5 @@
-export class User {
-    constructor(public readonly name:string) {
-    }
-}
+import {User} from "hexagonal.domain";
+
 export class UserRepositoryAdapter {
 
     private users = new Array<User>()

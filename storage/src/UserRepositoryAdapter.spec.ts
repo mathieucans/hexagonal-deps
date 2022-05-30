@@ -1,4 +1,5 @@
-import {User, UserRepositoryAdapter} from "./UserRepositoryAdapter";
+import {UserRepositoryAdapter} from "./UserRepositoryAdapter";
+import {User} from "hexagonal.domain";
 
 
 describe("UserRepositoryAdapter", () => {
