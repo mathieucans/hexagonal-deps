@@ -4,7 +4,8 @@
     "sourceMap": true,
     "outDir": "lib",
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "module": "CommonJS"
   },
   "include": [
     "src/**/*"

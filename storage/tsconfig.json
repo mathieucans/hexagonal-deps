@@ -4,7 +4,10 @@
     "sourceMap": true,
     "outDir": "lib",
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "module": "CommonJS",
+    "lib": ["ES2019"],
+    "target": "ES2019"
   },
   "include": [
     "src/**/*"
