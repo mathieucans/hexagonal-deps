@@ -1,5 +1,5 @@
 import {Application} from "hexagonal.domain";
-import {UserRepositoryAdapter} from "hexagonal.storage/lib/UserRepositoryAdapter";
+import {UserRepositoryAdapter} from "hexagonal.storage";
 
 console.log('application start');
 
