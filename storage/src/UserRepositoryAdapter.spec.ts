@@ -1,5 +1,6 @@
 import {UserRepositoryAdapter} from "./UserRepositoryAdapter";
 import {User} from "hexagonal.domain";
+import {createClient} from "redis";
 
 
 describe("UserRepositoryAdapter", () => {
@@ -26,6 +27,25 @@ describe("UserRepositoryAdapter", () => {
                 new User("mathieu"),
                 new User("thomas"),
                 new User("loic")])
+
+    });
+
+    test('connect to redis', async () => {
+        const client = createClient({
+            url: 'redis://localhost:6380'
+        });
+
+        client.on('error', (err) => console.error('Redis Client Error', err));
+
+        try {
+            await client.connect();
+
+            await client.set('firstKey', 'value');
+            const value = await client.get('firstKey');
+            expect(value).toEqual('value');
+        } finally {
+            await client.disconnect()
+        }
 
     });
 });
