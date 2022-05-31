@@ -1,1 +1,1 @@
-export {UserRepositoryAdapter} from './UserRepositoryAdapter'
+export {UserRepositoryRedisAdapter} from './UserRepositoryRedisAdapter'

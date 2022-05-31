@@ -1,7 +1,7 @@
 import {User, UserRepository} from "hexagonal.domain";
 import {createClient, RedisClientType, RedisDefaultModules, RedisFunctions, RedisModules, RedisScripts} from "redis";
 
-export class UserRepositoryAdapter implements UserRepository {
+export class UserRepositoryRedisAdapter implements UserRepository {
 
     private client: RedisClientType<RedisDefaultModules & RedisModules, RedisFunctions, RedisScripts>;
 

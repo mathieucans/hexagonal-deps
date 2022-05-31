@@ -1,11 +1,12 @@
 import {Application} from "hexagonal.domain";
-import {UserRepositoryAdapter} from "hexagonal.storage";
+import {UserRepositoryRedisAdapter} from "hexagonal.storage";
 
 console.log('application start');
 
 class ConsoleApplication{
     async start() {
-        let application = new Application(new UserRepositoryAdapter());
+        let userRepositoryRedisAdapter = new UserRepositoryRedisAdapter('redis://localhost:6380');
+        let application = new Application(userRepositoryRedisAdapter);
 
         console.log("add users")
         await application.addUser('me')

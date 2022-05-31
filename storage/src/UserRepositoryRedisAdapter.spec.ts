@@ -1,10 +1,10 @@
-import {UserRepositoryAdapter} from "./UserRepositoryAdapter";
+import {UserRepositoryRedisAdapter} from "./UserRepositoryRedisAdapter";
 import {User} from "hexagonal.domain";
 import {createClient} from "redis";
 
 
 describe("UserRepositoryAdapter", () => {
-    let userRepositoryAdapter: UserRepositoryAdapter;
+    let userRepositoryAdapter: UserRepositoryRedisAdapter;
 
     beforeEach(async () => {
         const client = createClient({
@@ -18,7 +18,7 @@ describe("UserRepositoryAdapter", () => {
         }finally {
             await client.disconnect();
         }
-        userRepositoryAdapter = new UserRepositoryAdapter('redis://localhost:6380');
+        userRepositoryAdapter = new UserRepositoryRedisAdapter('redis://localhost:6380');
 
     });
 
